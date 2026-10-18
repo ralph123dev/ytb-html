@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+
+    <!-- Bootstrap 5 via CDN (pas d'installation nécessaire) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Nos styles personnalisés (deux couleurs : blanc et bleu) -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <main class="page">
+        <div class="card-form">
+
+            <!-- En-tête du formulaire -->
+            <header class="form-header">
+                <h1>Bienvenue</h1>
+                <p>Quelques informations pour commencer. Cela ne prend qu'une minute.</p>
+            </header>
+
+            <!-- Formulaire : novalidate pour gérer nous-mêmes les messages -->
+            <form id="monFormulaire" novalidate>
+
+                <div class="row g-3">
+                    <!-- Nom -->
+                    <div class="col-md-6">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Ex : Fotso">
+                        <div class="invalid-feedback">Veuillez saisir votre nom.</div>
+                    </div>
+
+                    <!-- Prénom -->
+                    <div class="col-md-6">
+                        <label for="prenom" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" placeholder="Ex : Marie">
+                        <div class="invalid-feedback">Veuillez saisir votre prénom.</div>
+                    </div>
+
+                    <!-- Âge -->
+                    <div class="col-md-6">
+                        <label for="age" class="form-label">Âge</label>
+                        <input type="number" class="form-control" id="age" min="1" max="120" placeholder="Ex : 28">
+                        <div class="invalid-feedback">Veuillez saisir un âge valide.</div>
+                    </div>
+
+                    <!-- Ville -->
+                    <div class="col-md-6">
+                        <label for="ville" class="form-label">Ville</label>
+                        <input type="text" class="form-control" id="ville" placeholder="Ex : Bafoussam">
+                        <div class="invalid-feedback">Veuillez saisir votre ville.</div>
+                    </div>
+                </div>
+
+                <!-- Bouton Suivant -->
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-bleu btn-lg">Suivant</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Pop-up de confirmation (fenêtre modale Bootstrap) -->
+    <div class="modal fade" id="modalSucces" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-doux">
+                <div class="modal-body text-center p-4">
+                    <div class="coche mx-auto mb-3">✓</div>
+                    <h2 class="h4 mb-2">Merci !</h2>
+                    <p class="mb-4">Vos informations ont été envoyées avec succès.</p>
+                    <button type="button" class="btn btn-bleu px-4" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript via CDN (nécessaire pour la pop-up) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Notre script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
